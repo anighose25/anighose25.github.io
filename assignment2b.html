@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>HP3-GPU</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+<div class="jumbotron text-center">
+  <h1><font color="green">HP3 CUDA Programming</font></h1>
+  <p>Parallel Programming on the GPU</p>
+</div>
+<h1 align="center"><font color="blue"> Assignment 2B</font>: Convolutions </h1>
+<h3>Objective</h3>
+<p>This assignment will simply help you understand how the convolution operation can be used on data of various dimensionality.
+  <h3>Problem Statement</h3>
+
+Convolution is an array operation where each output data element is the weighted sum of a collection of neighboring input elements. The weights used in the weighted sum are typically
+stored in an array called the convolution mask. This mask is applied across each element of the input to yield a convolved output.
+This is depicted in the following figure.
+<figure align="center">
+<img src="Convolution.jpg">
+<figcaption align="center"><b>Fig 1. 1D Convolution [Kirk Hwu 2013] </b></figcaption>
+</figure>
+
+Your task would be to implement two kernels each computing convolution mask operations over different forms of data.
+<ol>
+<li>A  1D convolution mask which for each element of a 1D array computes the sum of its 4 immediate neighbors. </li>
+<li>A  2D convolution mask which for each element of a 2D array computes the average value of its 8 adjacent neighbors </li>
+<!-- <li>A 3D convolution mask which for each element of a 3D array computes the sum of all the neighboring points in a cuboid of unit length keeping the element under consideration at the center.</li> -->
+</ol>
+NOTE: Your program should be generic enough to handle inputs of any dimension.
+</body>
+
+</html>
