@@ -1,7 +1,19 @@
+/*$container-shadow: 0.5rem 0.5rem 2rem 0 rgba(black, 0.2);*/
+/*$gutter: 30px;*/
+/*$border-width: 4px;*/
+/*$dot-diameter: 8px;*/
+
 body {
     margin: 60px auto;
     width: 70%;
+    box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
 }
+
+
+
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
@@ -24,7 +36,7 @@ h1 {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 p {
-    font-size: 1.5em;
+    font-size: 1em;
     line-height: 1.4em;
     color: #333;
 }
@@ -41,3 +53,84 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
+.home h1 { margin-bottom: 25px; }
+
+.timeline {
+  width:100%;
+  max-width:1000px;
+  background:#fff;
+  padding: 5px 40px;
+  position: relative;
+  box-shadow: $container-shadow;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left:calc(33% + 15px); //$gutter/2
+    bottom: 0px;
+    width: $border-width;
+    background: #ddd;
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  } 
+}
+
+.entry {
+  clear: both;
+  text-align: left;
+  position: relative;
+  .title {
+    margin-bottom: .5em;
+    float: left;
+    width: 33%;
+    padding-right: $gutter;
+    text-align: right;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      width: $dot-diameter;
+      height: $dot-diameter;
+      border: $border-width solid salmon;
+      background-color:#fff;
+      border-radius:100%;
+      top: 15%;
+      right: -$dot-diameter;
+      z-index: 99;
+    }
+    h3 {
+      margin: 0;
+      font-size: 120%;
+    }
+    p {
+      margin: 0;
+      font-size: 100%;
+    }
+  }
+  .body {
+    margin: 0 0 3em;
+    float: right;
+    width: 66%;
+    padding-left: $gutter;
+    p {
+      line-height: 1.4em;
+      &:first-child {
+        margin-top: 0;
+        font-weight: 400;
+      }
+    }
+    ul {
+      color:#aaa;
+      padding-left: 0;
+      list-style-type: none;
+      li:before {
+        content: "–";
+        margin-right: .5em;
+      }
+    }
+  }
+}
+
